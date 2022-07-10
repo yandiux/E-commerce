@@ -1,0 +1,101 @@
+.header {
+  padding: var(--padding-mobile);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 1px 1px 10px #888a;
+}
+
+.header__title {
+  color: var(--secondary-color);
+}
+.header__menuham{
+  font-size: 1.4rem;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+}
+.navbar{
+  width: min(100%, 300px);
+  position: fixed;
+  background-color: var(--primary-color);
+  height: 100vh;
+  right: 0;
+  top: 0;
+  padding-top: 80px;
+  box-shadow: 0 0 20px 0 #0009;
+  transition: transform 600ms ease;
+  transform: translateX(105%);
+}
+.navbar-open {
+  transition: transform 600ms ease;
+  transform: translateX(0);
+}
+.navbar__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.navbar__links {
+  display: flex;
+  flex-direction: column;
+  height: 55px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color:darkgray
+}
+.navbar__link-active {
+  color: var(--secondary-color);
+}
+.navbar__links i {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 720px) {
+  .header {
+    padding: 0 0 0 var(--padding-tablet);
+    /* border-bottom: 1px solid var(--border-color); */
+    box-shadow: 1px 1px 10px #888a;
+    height: 100px;
+  }
+  .header__menuham {
+    display: none;
+  }
+  .navbar-open {
+    transform: translateX(0);
+    transition-duration: 0ms;
+  }
+  .navbar {
+    transform: translateX(0);
+    transition-duration: 0ms;
+    position: static;
+    width: auto;
+    height: auto;
+    padding: initial;
+    box-shadow: none;
+    width: min(50%, 800px);
+    background-color: transparent;
+  }
+  .navbar__list {
+    flex-direction: initial;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+  .navbar__items {
+    /* border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color); */
+    padding: 0;
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+  .navbar__links{
+    padding: 0 30px;
+  }
+}
